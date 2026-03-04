@@ -7,12 +7,13 @@ node_modules/
 /coverage
 
 # Next.js
-/.next/
-/out/
+.next/
+out/
 
-# Production
-/build
-/dist
+# Build
+build/
+dist/
+dist-ssr/
 
 # Local waitlist fallback data (when backend is not running)
 /data/
