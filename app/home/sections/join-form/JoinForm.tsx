@@ -38,7 +38,7 @@ export const JoinForm = () => {
   };
 
   const submitForm = async () => {
-    const API_ENDPOINT = `${process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:3002"}/api/v1/waitlist`;
+    const API_ENDPOINT = `${process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:3000"}/api/v1/waitlist`;
 
     const response = await fetch(API_ENDPOINT, {
       method: "POST",
