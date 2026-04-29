@@ -62,10 +62,10 @@ const FeatureCard = ({ icon: Icon, title, description }) => (
       <div className="flex-shrink-0 w-9 h-9 max-sm:w-9 max-sm:h-9 sm:w-12 sm:h-12 bg-blue-100 dark:bg-blue-950/50 rounded-[16px] sm:rounded-[18px] flex items-center justify-center">
         <Icon className="size-4 sm:size-5 text-blue-600 dark:text-blue-300" />
       </div>
-      <h3 className="text-base sm:text-lg font-bold text-gray-800 dark:text-gray-100">
+      <h3 className="text-lg sm:text-xl font-extrabold text-gray-800 dark:text-gray-100">
         {title}
       </h3>
-      <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm leading-relaxed mt-auto">
+      <p className="text-gray-600 dark:text-gray-300 text-base font-medium leading-relaxed mt-auto">
         {description}
       </p>
     </div>

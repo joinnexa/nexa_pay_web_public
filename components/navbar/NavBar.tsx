@@ -181,7 +181,7 @@ export const NavBar = () => {
                   <button
                     key={target}
                     onClick={() => handleScroll(target, offset)}
-                    className={`flex items-center text-xs font-semibold cursor-pointer transition-colors whitespace-nowrap ${
+                    className={`flex items-center text-sm font-semibold cursor-pointer transition-colors whitespace-nowrap ${
                       theme === "dark" ? "text-gray-200 hover:text-white" : "text-gray-700 hover:text-gray-900"
                     }`}
                   >
@@ -192,7 +192,7 @@ export const NavBar = () => {
                   <button
                     type="button"
                     onClick={() => setIsLocaleOpen((prev) => !prev)}
-                    className={`inline-flex items-center justify-center min-w-14 h-9 px-3 rounded-full border text-xs font-bold tracking-wider ${
+                    className={`inline-flex items-center justify-center min-w-14 h-9 px-3 rounded-full border text-sm font-bold tracking-wider ${
                       theme === "dark"
                         ? "border-white/20 bg-[#0b1a35] text-white"
                         : "border-gray-300 bg-white text-gray-900"
@@ -213,7 +213,7 @@ export const NavBar = () => {
                             setLocale(item);
                             setIsLocaleOpen(false);
                           }}
-                          className={`w-full h-8 rounded-lg text-xs font-semibold ${
+                          className={`w-full h-8 rounded-lg text-sm font-semibold ${
                             item === locale
                               ? "bg-blue-600 text-white"
                               : theme === "dark"
@@ -238,12 +238,12 @@ export const NavBar = () => {
                 >
                   {theme === "dark" ? <Sun className="size-4" /> : <Moon className="size-4" />}
                 </button>
-                <button onClick={() => handleScroll("contact", -20)} className={`text-xs font-semibold transition-colors whitespace-nowrap ${
+                <button onClick={() => handleScroll("contact", -20)} className={`text-sm font-semibold transition-colors whitespace-nowrap ${
                   theme === "dark" ? "text-gray-200 hover:text-white" : "text-gray-700 hover:text-gray-900"
                 }`}>
                   {t.nav.contact}
                 </button>
-                <button onClick={handleJoinWaitlist} className="bg-[var(--dark-bg)] opacity-90 hover:opacity-100 text-white font-semibold py-2 px-3 md:px-4 rounded-lg transition-all text-xs whitespace-nowrap">
+                <button onClick={handleJoinWaitlist} className="bg-[var(--dark-bg)] opacity-90 hover:opacity-100 text-white font-bold py-2 px-3 md:px-4 rounded-lg transition-all text-sm whitespace-nowrap">
                   {t.nav.join}
                 </button>
               </div>
@@ -275,7 +275,7 @@ export const NavBar = () => {
               <button
                 type="button"
                 onClick={() => setIsMobileLocaleOpen((prev) => !prev)}
-                className={`inline-flex items-center justify-center min-w-12 h-8 px-2.5 rounded-full border text-xs font-bold tracking-wider ${
+                className={`inline-flex items-center justify-center min-w-12 h-8 px-2.5 rounded-full border text-sm font-bold tracking-wider ${
                   theme === "dark"
                     ? "border-white/20 bg-[#0b1a35] text-white"
                     : "border-gray-300 bg-white text-gray-900"
@@ -296,7 +296,7 @@ export const NavBar = () => {
                         setLocale(item);
                         setIsMobileLocaleOpen(false);
                       }}
-                      className={`w-full h-8 rounded-lg text-xs font-semibold ${
+                      className={`w-full h-8 rounded-lg text-sm font-semibold ${
                         item === locale
                           ? "bg-blue-600 text-white"
                           : theme === "dark"
@@ -330,7 +330,7 @@ export const NavBar = () => {
             <button
               key={`mobile-${target}`}
               onClick={() => handleScroll(target, offset)}
-              className={`shrink-0 px-3 py-1.5 rounded-full text-xs font-medium border transition-colors ${
+              className={`shrink-0 px-3 py-1.5 rounded-full text-sm font-semibold border transition-colors ${
                 theme === "dark"
                   ? "text-gray-100 border-white/15 hover:text-white"
                   : "text-gray-700 border-gray-200 hover:text-gray-900"
@@ -341,7 +341,7 @@ export const NavBar = () => {
           ))}
           <button
             onClick={handleJoinWaitlist}
-            className="shrink-0 bg-[var(--dark-bg)] opacity-90 hover:opacity-100 text-white font-semibold py-1.5 px-3 rounded-full transition-all text-xs"
+            className="shrink-0 bg-[var(--dark-bg)] opacity-90 hover:opacity-100 text-white font-bold py-1.5 px-3 rounded-full transition-all text-sm"
           >
             {t.nav.join}
           </button>

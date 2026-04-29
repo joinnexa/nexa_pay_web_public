@@ -10,7 +10,7 @@ export const PillarsSection = () => {
   return (
     <section id="pillars" className="bg-white dark:bg-[#070f1f] py-8 sm:py-14 md:py-20 px-4 sm:px-6 md:px-10">
       <ScrollFade className="max-w-5xl mx-auto">
-        <p className="text-center text-xs font-semibold uppercase tracking-[0.18em] text-blue-700 dark:text-blue-300 mb-3">
+        <p className="text-center text-sm font-bold uppercase tracking-[0.16em] text-blue-700 dark:text-blue-300 mb-4">
           {t.pillars.eyebrow}
         </p>
         <h2 className="primary-heading">{t.pillars.title}</h2>
@@ -25,8 +25,8 @@ export const PillarsSection = () => {
                   <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-blue-100 dark:bg-blue-950/50 flex items-center justify-center mb-3 sm:mb-4">
                     <Icon className="size-[18px] sm:size-5 text-blue-700 dark:text-blue-300" />
                   </div>
-                  <h3 className="text-[0.9375rem] sm:text-base font-bold text-gray-900 dark:text-gray-100 mb-1.5 sm:mb-2">{card.title}</h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-300 leading-snug max-sm:leading-snug">{card.text}</p>
+                  <h3 className="text-lg sm:text-xl font-extrabold text-gray-900 dark:text-gray-100 mb-2">{card.title}</h3>
+                  <p className="text-base font-medium text-gray-600 dark:text-gray-300 leading-relaxed">{card.text}</p>
                 </article>
               </ScrollStagger>
             );

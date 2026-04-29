@@ -58,12 +58,12 @@ export const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: dur, delay: 0 }}
             >
-              <p className="bg-blue-100 dark:bg-blue-950/50 text-blue-900 dark:text-blue-200 text-xs font-semibold px-3 py-2 md:px-4 md:py-2 rounded-full border border-blue-200 dark:border-blue-800">
+              <p className="bg-blue-100 dark:bg-blue-950/50 text-blue-900 dark:text-blue-200 text-sm font-bold px-3 py-2 md:px-4 md:py-2 rounded-full border border-blue-200 dark:border-blue-800 tracking-wide">
                 {t.hero.beta}
               </p>
             </motion.div>
           </div>
-          <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-gray-800 dark:text-gray-100 font-bold text-center md:text-left mb-3 md:mb-4 leading-tight">
+          <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-gray-800 dark:text-gray-100 font-extrabold text-center md:text-left mb-3 md:mb-4 leading-[1.05] tracking-tight">
             <SplitText
               text={t.hero.title1}
               variant="word"
@@ -77,7 +77,7 @@ export const HeroSection = () => {
             />
           </div>
           <motion.p
-            className="text-sm sm:text-base text-gray-600 dark:text-gray-300 text-center md:text-left max-w-2xl mb-4 sm:mb-6 md:mb-8 leading-relaxed"
+            className="text-lg sm:text-xl font-medium text-gray-600 dark:text-gray-300 text-center md:text-left max-w-2xl mb-4 sm:mb-6 md:mb-8 leading-relaxed"
             initial={{ opacity: 0, y: up }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: dur, delay: isPhone ? 0.12 : 0.3 }}
@@ -85,7 +85,7 @@ export const HeroSection = () => {
             {t.hero.text}
           </motion.p>
           <motion.p
-            className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 text-center md:text-left max-w-2xl mb-5 sm:mb-8 md:mb-10 font-medium tracking-wide"
+            className="text-sm sm:text-base font-semibold text-gray-500 dark:text-gray-400 text-center md:text-left max-w-2xl mb-5 sm:mb-8 md:mb-10 tracking-wide"
             initial={{ opacity: 0, y: up }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: dur, delay: isPhone ? 0.16 : 0.35 }}
@@ -98,10 +98,10 @@ export const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: dur, delay: isPhone ? 0.2 : 0.4 }}
           >
-            <button onClick={handleJoinWaitlist} className="bg-[var(--dark-bg)] opacity-90 hover:opacity-100 text-white font-semibold py-2 md:py-3 px-6 md:px-8 rounded-xl transition-all text-sm">
+            <button onClick={handleJoinWaitlist} className="bg-[var(--dark-bg)] opacity-90 hover:opacity-100 text-white font-bold py-2 md:py-3 px-6 md:px-8 rounded-xl transition-all text-base">
               {t.hero.ctaPrimary}
             </button>
-            <button onClick={handleExploreFlow} className="border-2 border-gray-200/60 dark:border-white/15 bg-gray-100/60 dark:bg-white/5 text-gray-800 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-white/10 font-semibold py-2 md:py-3 px-6 md:px-8 rounded-xl transition-all text-sm">
+            <button onClick={handleExploreFlow} className="border-2 border-gray-200/60 dark:border-white/15 bg-gray-100/60 dark:bg-white/5 text-gray-800 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-white/10 font-semibold py-2 md:py-3 px-6 md:px-8 rounded-xl transition-all text-base">
               {t.hero.ctaSecondary}
             </button>
           </motion.div>

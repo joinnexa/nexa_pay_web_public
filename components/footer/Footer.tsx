@@ -19,7 +19,7 @@ export const Footer = () => {
             />
             <h3 className="text-lg font-bold">Nexa</h3>
           </div>
-          <p className="text-sm text-gray-400">
+          <p className="text-base font-medium text-gray-400">
             {t.footer.subtitle}
           </p>
         </div>
@@ -29,7 +29,7 @@ export const Footer = () => {
         {/* Contact Section */}
         <div className="grid grid-cols-1 gap-8 mb-8">
           <div>
-            <h4 className="text-xs font-semibold text-gray-300 mb-3 uppercase tracking-wide">
+            <h4 className="text-sm font-bold text-gray-300 mb-3 uppercase tracking-wide">
               {t.footer.contactLabel}
             </h4>
             <div className="grid gap-2">
@@ -37,7 +37,7 @@ export const Footer = () => {
                 <a
                   key={email}
                   href={`mailto:${email}`}
-                  className="text-xs text-white hover:text-blue-400 transition-colors"
+                  className="text-sm font-medium text-white hover:text-blue-400 transition-colors"
                 >
                   {email}
                 </a>
@@ -53,7 +53,7 @@ export const Footer = () => {
           <p className="text-sm text-gray-400">
             {t.footer.secured}
           </p>
-          <p className="text-xs sm:text-sm text-gray-500">
+          <p className="text-sm text-gray-500">
             © 2026 Nexa. All rights reserved.
           </p>
         </div>

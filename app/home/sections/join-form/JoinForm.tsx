@@ -126,7 +126,7 @@ export const JoinForm = () => {
             {/* Status Message */}
             {submitStatus.type && (
               <div
-                className={`mb-6 p-3 md:p-4 rounded-lg md:rounded-md text-xs sm:text-sm ${
+                className={`mb-6 p-3 md:p-4 rounded-lg md:rounded-md text-sm sm:text-base font-medium ${
                   submitStatus.type === "success"
                     ? "bg-green-50 text-green-800 border border-green-200"
                     : "bg-red-50 text-red-800 border border-red-200"
@@ -142,7 +142,7 @@ export const JoinForm = () => {
               <div className="space-y-1.5 md:space-y-2">
                 <Label
                   htmlFor="full_name"
-                  className="text-xs sm:text-sm md:text-base"
+                  className="text-sm sm:text-base font-semibold"
                 >
                   {t.form.fullName} <span className="text-red-500">*</span>
                 </Label>
@@ -161,7 +161,7 @@ export const JoinForm = () => {
               <div className="space-y-1.5 md:space-y-2">
                 <Label
                   htmlFor="phone_number"
-                  className="text-xs sm:text-sm md:text-base"
+                  className="text-sm sm:text-base font-semibold"
                 >
                   {t.form.phone} <span className="text-red-500">*</span>
                 </Label>
@@ -181,7 +181,7 @@ export const JoinForm = () => {
               <div className="space-y-1.5 md:space-y-2">
                 <Label
                   htmlFor="email"
-                  className="text-xs sm:text-sm md:text-base"
+                  className="text-sm sm:text-base font-semibold"
                 >
                   {t.form.email} <span className="text-red-500">*</span>
                 </Label>
@@ -201,7 +201,7 @@ export const JoinForm = () => {
               <div className="space-y-1.5 md:space-y-2">
                 <Label
                   htmlFor="city"
-                  className="text-xs sm:text-sm md:text-base"
+                  className="text-sm sm:text-base font-semibold"
                 >
                   {t.form.city} <span className="text-red-500">*</span>
                 </Label>
@@ -219,7 +219,7 @@ export const JoinForm = () => {
               <div className="space-y-1.5 md:space-y-2">
                 <Label
                   htmlFor="how_will_use_nexa"
-                  className="text-xs sm:text-sm md:text-base"
+                  className="text-sm sm:text-base font-semibold"
                 >
                   {t.form.usage}
                 </Label>
@@ -236,14 +236,14 @@ export const JoinForm = () => {
               {/* Submit */}
               <Button
                 type="submit"
-                className="w-full h-10 sm:h-11 md:h-12 text-xs sm:text-sm md:text-base font-medium bg-[var(--dark-bg)] opacity-90 hover:opacity-100 text-white rounded-lg transition-all"
+                className="w-full h-10 sm:h-11 md:h-12 text-sm sm:text-base font-bold bg-[var(--dark-bg)] opacity-90 hover:opacity-100 text-white rounded-lg transition-all"
                 disabled={isLoading}
               >
                 {isLoading ? t.form.submitting : t.form.submit}
               </Button>
 
               {/* Privacy Note */}
-              <p className="text-center text-xs text-gray-600 dark:text-gray-300 mt-4">
+              <p className="text-center text-sm font-medium text-gray-600 dark:text-gray-300 mt-4">
                 {t.form.privacy}
               </p>
             </form>

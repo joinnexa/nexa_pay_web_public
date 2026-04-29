@@ -8,7 +8,7 @@ export const RoadmapSection = () => {
   return (
     <section id="roadmap" className="bg-gray-50 dark:bg-[#070f1f] py-8 sm:py-14 md:py-20 px-4 sm:px-6 md:px-10">
       <ScrollFade className="max-w-5xl mx-auto">
-        <p className="text-center text-xs font-semibold uppercase tracking-[0.18em] text-blue-700 dark:text-blue-300 mb-3">
+        <p className="text-center text-sm font-bold uppercase tracking-[0.16em] text-blue-700 dark:text-blue-300 mb-4">
           {t.roadmap.eyebrow}
         </p>
         <h2 className="primary-heading">{t.roadmap.title}</h2>
@@ -18,8 +18,8 @@ export const RoadmapSection = () => {
           {t.roadmap.items.map((item, index) => (
             <ScrollStagger key={item.city} index={index}>
               <article className="h-full rounded-2xl border border-gray-200 dark:border-white/10 bg-white dark:bg-[#101b31] p-4 sm:p-5 max-sm:py-3.5">
-                <p className="text-base font-bold text-gray-900 dark:text-gray-100">{item.city}</p>
-                <p className="mt-2 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">{item.status}</p>
+                <p className="text-lg font-extrabold text-gray-900 dark:text-gray-100">{item.city}</p>
+                <p className="mt-2 text-base font-medium text-gray-600 dark:text-gray-300 leading-relaxed">{item.status}</p>
               </article>
             </ScrollStagger>
           ))}

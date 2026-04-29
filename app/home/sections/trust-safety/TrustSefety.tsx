@@ -19,7 +19,7 @@ export const TrustSefetySection = () => {
     <section id="trust" className="bg-white dark:bg-[#070f1f] !pb-24 sm:!pb-28 py-8 sm:py-14 md:py-10 px-4 sm:px-6 md:px-20">
       <ScrollFade className="max-w-5xl mx-auto text-center">
         {/* Title */}
-        <p className="text-center text-xs font-semibold uppercase tracking-[0.18em] text-blue-700 dark:text-blue-300 mb-3">
+        <p className="text-center text-sm font-bold uppercase tracking-[0.16em] text-blue-700 dark:text-blue-300 mb-4">
           {t.trust.eyebrow}
         </p>
         <h2 className="primary-heading mb-4">
@@ -41,7 +41,7 @@ export const TrustSefetySection = () => {
         </div>
 
         {/* Disclaimer */}
-        <div className="mt-8 md:mt-10 bg-white dark:bg-[#101b31] border border-gray-200 dark:border-white/10 rounded-lg md:rounded-xl py-4 px-4 sm:px-6 text-xs sm:text-sm text-gray-600 dark:text-gray-300 shadow-sm">
+        <div className="mt-8 md:mt-10 bg-white dark:bg-[#101b31] border border-gray-200 dark:border-white/10 rounded-lg md:rounded-xl py-4 px-4 sm:px-6 text-sm sm:text-base font-medium text-gray-600 dark:text-gray-300 shadow-sm">
           {t.trust.betaDisclaimer}
         </div>
       </ScrollFade>
@@ -56,8 +56,8 @@ const TrustCard = ({ icon, title, description }) => (
       {icon}
     </div>
 
-    <h3 className="text-base md:text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">{title}</h3>
+    <h3 className="text-lg md:text-xl font-extrabold text-gray-900 dark:text-gray-100 mb-2">{title}</h3>
 
-    <p className="text-xs md:text-sm text-gray-600 dark:text-gray-300 leading-relaxed">{description}</p>
+    <p className="text-base font-medium text-gray-600 dark:text-gray-300 leading-relaxed">{description}</p>
   </div>
 );

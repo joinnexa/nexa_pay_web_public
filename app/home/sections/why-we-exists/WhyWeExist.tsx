@@ -68,7 +68,7 @@ export const WhyWeExist = () => {
                         transition={{ duration: d, delay: isPhone ? 0.1 : 0.2 }}
                         viewport={{ once: true }}
                     >
-                        <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-4">
+                        <h3 className="text-xl font-extrabold text-gray-900 dark:text-gray-100 mb-4">
                             {t.why.fixingTitle}
                         </h3>
                         <motion.ul
@@ -85,7 +85,7 @@ export const WhyWeExist = () => {
                                     className="flex gap-3 items-start"
                                 >
                                     <CheckCircle2 className="size-4 text-green-500 dark:text-green-400 flex-shrink-0 mt-0.5" />
-                                    <span className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">{issue}</span>
+                                    <span className="text-gray-700 dark:text-gray-300 text-base font-medium leading-relaxed">{issue}</span>
                                 </motion.li>
                             ))}
                         </motion.ul>
@@ -98,11 +98,11 @@ export const WhyWeExist = () => {
                         transition={{ duration: d, delay: isPhone ? 0.12 : 0.3 }}
                         viewport={{ once: true }}
                     >
-                        <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-4">
+                        <h3 className="text-xl font-extrabold text-gray-900 dark:text-gray-100 mb-4">
                             {t.why.buildingTitle}
                         </h3>
                         <div className="bg-blue-50 dark:bg-blue-950/35 border-l-4 border-[#0e2771] dark:border-blue-500 p-4 sm:p-6 rounded-lg">
-                            <p className="text-gray-900 dark:text-gray-100 leading-relaxed font-medium text-sm">
+                            <p className="text-gray-900 dark:text-gray-100 leading-relaxed font-semibold text-base">
                                 {t.why.buildingText}
                             </p>
                         </div>

@@ -30,7 +30,7 @@ export const AccessSection = () => {
         </div>
 
         {/* Notice */}
-        <div className="flex gap-1 items-center justify-center mt-6 sm:mt-8 md:mt-10 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-600/40 rounded-lg md:rounded-xl py-2.5 sm:py-3 md:py-4 px-4 md:px-6 text-xs sm:text-sm text-yellow-800 dark:text-yellow-200">
+        <div className="flex gap-1 items-center justify-center mt-6 sm:mt-8 md:mt-10 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-600/40 rounded-lg md:rounded-xl py-2.5 sm:py-3 md:py-4 px-4 md:px-6 text-sm sm:text-base font-medium text-yellow-800 dark:text-yellow-200">
           <p className="font-semibold">{t.access.noteLabel}</p>
           {t.access.noteText}
         </div>
@@ -46,10 +46,10 @@ const StepCard = ({ icon: Icon, title, description }) => (
       <Icon size={24} />
     </div>
 
-    <h3 className="text-sm max-sm:text-sm md:text-lg font-medium text-gray-900 dark:text-gray-100 mb-1.5 sm:mb-2">
+    <h3 className="text-lg md:text-xl font-extrabold text-gray-900 dark:text-gray-100 mb-1.5 sm:mb-2">
       {title}
     </h3>
-    <p className="text-xs md:text-sm text-gray-600 dark:text-gray-300 leading-snug max-sm:leading-snug">
+    <p className="text-base font-medium text-gray-600 dark:text-gray-300 leading-relaxed max-sm:leading-relaxed">
       {description}
     </p>
   </div>

@@ -82,7 +82,7 @@ export const AdvantagesSection = () => {
                         {advantages.map((advantage, index) => (
                             <motion.li key={index} variants={itemVariants} className="flex gap-2 items-start">
                                 <CheckCircle2 className="size-5 text-blue-600 dark:text-blue-300 flex-shrink-0 mt-0.5" />
-                                <span className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+                                <span className="text-gray-700 dark:text-gray-300 text-base font-medium leading-relaxed">
                                     {advantage}
                                 </span>
                             </motion.li>
