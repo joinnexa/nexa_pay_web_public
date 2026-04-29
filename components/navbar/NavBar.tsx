@@ -253,8 +253,9 @@ export const NavBar = () => {
       </nav>
 
       {/* Mobile Top Navbar */}
-      <nav className={`md:hidden shadow-sm border-b ${
-        theme === "dark" ? "bg-[#081122] border-white/10 text-white" : "bg-gray-50 border-gray-200"
+      <div className="md:hidden h-[104px]" />
+      <nav className={`md:hidden fixed top-0 left-0 right-0 z-50 shadow-sm border-b ${
+        theme === "dark" ? "bg-[#081122]/90 border-white/10 text-white backdrop-blur-md" : "bg-gray-50/90 border-gray-200 backdrop-blur-md"
       }`}>
         <div className="flex items-center justify-between h-14 px-4">
           <div className="flex items-center gap-2">
@@ -322,39 +323,28 @@ export const NavBar = () => {
             </button>
           </div>
         </div>
-      </nav>
-
-      {/* Mobile Bottom Navbar */}
-      <nav className={`md:hidden fixed bottom-0 left-0 right-0 shadow-lg border-t z-50 ${
-        theme === "dark" ? "bg-[#081122] border-white/10" : "bg-gray-50 border-gray-200"
-      }`}>
-        <div className="flex justify-around items-center h-16 px-4">
-          {/* <button
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="flex flex-col items-center justify-center p-2 hover:opacity-80 transition-opacity"
-            title="Home"
-          >
-            <Image
-              src="/images/ressources/nexa-pay.png"
-              alt="Nexa Logo"
-              width={60}
-              height={10}
-              className="h-6 w-auto"
-            />
-          </button> */}
-          {navItems.map(({ icon: Icon, label, target, offset }) => (
+        <div className={`h-[50px] px-2 border-t flex items-center gap-2 overflow-x-auto ${
+          theme === "dark" ? "border-white/10" : "border-gray-200"
+        }`}>
+          {navItems.map(({ label, target, offset }) => (
             <button
-              key={target}
+              key={`mobile-${target}`}
               onClick={() => handleScroll(target, offset)}
-              className={`flex flex-col gap-1 items-center justify-center p-2 transition-colors ${
-                theme === "dark" ? "text-gray-100 hover:text-white" : "text-gray-700 hover:text-gray-900"
+              className={`shrink-0 px-3 py-1.5 rounded-full text-xs font-medium border transition-colors ${
+                theme === "dark"
+                  ? "text-gray-100 border-white/15 hover:text-white"
+                  : "text-gray-700 border-gray-200 hover:text-gray-900"
               }`}
-              title={label}
             >
-              <Icon className="size-4" />
-              <p className="text-[10px] leading-none">{label}</p>
+              {label}
             </button>
           ))}
+          <button
+            onClick={handleJoinWaitlist}
+            className="shrink-0 bg-[var(--dark-bg)] opacity-90 hover:opacity-100 text-white font-semibold py-1.5 px-3 rounded-full transition-all text-xs"
+          >
+            {t.nav.join}
+          </button>
         </div>
       </nav>
     </>

@@ -1,12 +1,17 @@
+"use client";
+
 import { motion } from "framer-motion";
+import { useIsPhone } from "@/hooks/useIsPhone";
 
 export const AnimatedBackground = () => {
+  const isPhone = useIsPhone();
+
   const floatingVariants = {
     animate: (custom: number) => ({
-      y: [0, -30, 0],
-      x: [0, 20, 0],
+      y: isPhone ? [0, -10, 0] : [0, -30, 0],
+      x: isPhone ? [0, 6, 0] : [0, 20, 0],
       transition: {
-        duration: 6 + custom,
+        duration: isPhone ? 8 + custom * 0.75 : 6 + custom,
         repeat: Infinity,
         ease: "easeInOut" as const,
       },
@@ -50,14 +55,18 @@ export const AnimatedBackground = () => {
       {/* Floating accent circles */}
       <motion.div
         className="absolute bottom-40 left-20 w-32 h-32 border-2 border-purple-300 rounded-full opacity-10"
-        animate={{
-          rotate: -360,
-          transition: {
-            duration: 15,
-            repeat: Infinity,
-            ease: "linear" as const,
-          },
-        }}
+        animate={
+          isPhone
+            ? { rotate: 0 }
+            : {
+                rotate: -360,
+                transition: {
+                  duration: 15,
+                  repeat: Infinity,
+                  ease: "linear" as const,
+                },
+              }
+        }
       />
 
       {/* Subtle grid background */}

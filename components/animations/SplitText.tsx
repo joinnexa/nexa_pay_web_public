@@ -1,5 +1,8 @@
+"use client";
+
 import { motion, Variants } from "framer-motion";
 import React from "react";
+import { useIsPhone } from "@/hooks/useIsPhone";
 
 interface SplitTextProps {
   text: string;
@@ -14,27 +17,33 @@ export const SplitText = ({
   delay = 0,
   variant = "character" 
 }: SplitTextProps) => {
+  const isPhone = useIsPhone();
   const words = text.split(" ");
   const chars = text.split("");
+
+  const stagger = isPhone ? 0.025 : 0.05;
+  const move = isPhone ? 8 : 20;
+  const itemDuration = isPhone ? 0.28 : 0.5;
+  const delayScale = isPhone ? 0.65 : 1;
 
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.05,
-        delayChildren: delay,
+        staggerChildren: stagger,
+        delayChildren: delay * delayScale,
       },
     },
   };
 
   const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: move },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.5,
+        duration: itemDuration,
       },
     },
   };

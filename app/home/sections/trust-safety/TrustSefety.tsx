@@ -16,7 +16,7 @@ export const TrustSefetySection = () => {
     };
   });
   return (
-    <section id="trust" className="bg-white dark:bg-[#070f1f] !pb-28 py-12 sm:py-16 md:py-10 px-4 sm:px-6 md:px-20">
+    <section id="trust" className="bg-white dark:bg-[#070f1f] !pb-24 sm:!pb-28 py-8 sm:py-14 md:py-10 px-4 sm:px-6 md:px-20">
       <ScrollFade className="max-w-5xl mx-auto text-center">
         {/* Title */}
         <p className="text-center text-xs font-semibold uppercase tracking-[0.18em] text-blue-700 dark:text-blue-300 mb-3">
@@ -28,7 +28,7 @@ export const TrustSefetySection = () => {
         <p className="secondary-heading">{t.trust.text}</p>
 
         {/* Features */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 lg:gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-6 lg:gap-10">
           {trustCards.map((card, index) => (
             <ScrollStagger key={index} index={index}>
               <TrustCard
@@ -50,7 +50,7 @@ export const TrustSefetySection = () => {
 };
 
 const TrustCard = ({ icon, title, description }) => (
-  <div className="flex flex-col items-center text-center max-w-xs mx-auto bg-gray-50 dark:bg-[#101b31] shadow-sm rounded-3xl hover:shadow-md transition-shadow duration-200 border border-gray-200 dark:border-white/10 p-6 py-12">
+  <div className="flex flex-col items-center text-center max-w-xs mx-auto bg-gray-50 dark:bg-[#101b31] shadow-sm rounded-3xl hover:shadow-md transition-shadow duration-200 border border-gray-200 dark:border-white/10 px-5 py-9 max-sm:px-4 max-sm:py-8 md:p-6 md:py-12">
     {/* Icon container */}
     <div className="w-12 md:w-14 h-12 md:h-14 flex items-center justify-center rounded-lg md:rounded-xl bg-white dark:bg-[#162742] text-blue-600 dark:text-blue-300 shadow-md mb-4 md:mb-6">
       {icon}

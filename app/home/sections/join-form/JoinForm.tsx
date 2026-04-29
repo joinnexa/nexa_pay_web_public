@@ -111,10 +111,10 @@ export const JoinForm = () => {
         </svg>
       </div>
       <div className="bg-gray-100 dark:bg-[#070f1f]">
-        <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8">
+        <section className="py-8 sm:py-14 md:py-20 px-4 sm:px-6 md:px-8">
           <ScrollFade className="max-w-xl mx-auto">
             {/* Header */}
-            <div className="text-center mb-8 md:mb-12">
+            <div className="text-center mb-6 sm:mb-8 md:mb-12">
               <h2 className="primary-heading">
                 {t.form.title}
               </h2>

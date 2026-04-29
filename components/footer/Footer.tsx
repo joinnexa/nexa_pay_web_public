@@ -7,7 +7,7 @@ import { useLocale } from "@/contexts/LocaleContext";
 export const Footer = () => {
   const { t } = useLocale();
   return (
-    <footer id="contact" className="bg-gray-900 text-white pt-12 sm:pt-16 md:pt-20 pb-8 sm:pb-10 md:pb-12 px-4 sm:px-6 md:px-8">
+    <footer id="contact" className="bg-gray-900 text-white pt-8 sm:pt-14 md:pt-20 pb-8 sm:pb-10 md:pb-12 px-4 sm:px-6 md:px-8">
       <div className="max-w-6xl mx-auto">
         {/* Header Section */}
         <div className="mb-8">

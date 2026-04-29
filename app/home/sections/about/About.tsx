@@ -25,7 +25,7 @@ export const AboutSection = () => {
         </svg>
       </div>
       <div className="bg-gray-50 dark:bg-[#070f1f] w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
-        <ScrollFade className="max-w-5xl mx-auto px-4 pb-20 sm:px-6 md:px-20 pt-20 sm:pt-20 md:pt-20">
+        <ScrollFade className="max-w-5xl mx-auto px-4 pb-12 sm:pb-16 md:pb-20 sm:px-6 md:px-20 pt-12 sm:pt-16 md:pt-20">
           <h2 className="primary-heading">
             {t.about.title}
           </h2>
@@ -33,7 +33,7 @@ export const AboutSection = () => {
             {t.about.text}
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-3 sm:gap-6 md:gap-8">
             {features.map((feature, index) => (
               <ScrollStagger key={index} index={index}>
                 <FeatureCard {...feature} />
@@ -57,9 +57,9 @@ export const AboutSection = () => {
 };
 
 const FeatureCard = ({ icon: Icon, title, description }) => (
-  <div className="flex flex-col items-start p-4 sm:p-6 md:p-8 bg-white dark:bg-[#101b31] shadow-sm rounded-3xl hover:shadow-md transition-shadow duration-200 border border-gray-200 dark:border-white/10">
-    <div className="flex flex-col h-40 gap-3 sm:gap-4 items-start">
-      <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 dark:bg-blue-950/50 rounded-[18px] flex items-center justify-center">
+  <div className="flex flex-col items-start p-3.5 max-sm:p-3.5 sm:p-6 md:p-8 bg-white dark:bg-[#101b31] shadow-sm rounded-3xl hover:shadow-md transition-shadow duration-200 border border-gray-200 dark:border-white/10">
+    <div className="flex flex-col h-[8.75rem] max-sm:h-[7.65rem] sm:h-40 gap-2.5 max-sm:gap-2 sm:gap-4 items-start">
+      <div className="flex-shrink-0 w-9 h-9 max-sm:w-9 max-sm:h-9 sm:w-12 sm:h-12 bg-blue-100 dark:bg-blue-950/50 rounded-[16px] sm:rounded-[18px] flex items-center justify-center">
         <Icon className="size-4 sm:size-5 text-blue-600 dark:text-blue-300" />
       </div>
       <h3 className="text-base sm:text-lg font-bold text-gray-800 dark:text-gray-100">

@@ -7,9 +7,14 @@ import { motion } from "framer-motion";
 import { SplitText } from "@/components/animations/SplitText";
 import { AnimatedBackground } from "@/components/animations/AnimatedBackground";
 import { useLocale } from "@/contexts/LocaleContext";
+import { useIsPhone } from "@/hooks/useIsPhone";
 
 export const HeroSection = () => {
   const { t } = useLocale();
+  const isPhone = useIsPhone();
+  const up = isPhone ? 10 : 20;
+  const dur = isPhone ? 0.38 : 0.6;
+  const stagger = isPhone ? 0.06 : 0.15;
   const handleExploreFlow = () => {
     scroller.scrollTo('howItWorks', {
       duration: 700,
@@ -28,18 +33,18 @@ export const HeroSection = () => {
   };
 
   return (
-    <section className="min-h-screen sm:min-h-[90vh] md:h-[96vh] flex flex-col relative bg-white dark:bg-[#070f1f]">
+    <section className="min-h-[88dvh] sm:min-h-[90vh] md:h-[96vh] flex flex-col relative bg-white dark:bg-[#070f1f]">
       <AnimatedBackground />
       {/* Hero Section */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[2fr_1fr] items-center px-4 sm:px-6 md:px-8 pb-12 md:pb-5 flex-1 relative z-10 gap-8 md:gap-12">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[2fr_1fr] items-center px-4 sm:px-6 md:px-8 pb-7 sm:pb-10 md:pb-5 flex-1 relative z-10 gap-5 sm:gap-8 md:gap-12 pt-3 sm:pt-0">
         {/* Left Content */}
         <div className="flex flex-col items-center md:items-start justify-center">
           <div className="flex items-center justify-start gap-2">
             <motion.div
-              className="mb-4"
-              initial={{ opacity: 0, y: 20 }}
+              className="mb-3 sm:mb-4"
+              initial={{ opacity: 0, y: up }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
+              transition={{ duration: dur, delay: stagger }}
             >
               <img
                 src="/images/ressources/nexa-pay-no-bg.png"
@@ -48,10 +53,10 @@ export const HeroSection = () => {
               />
             </motion.div>
             <motion.div
-              className="mb-4 inline-block"
-              initial={{ opacity: 0, y: 20 }}
+              className="mb-3 sm:mb-4 inline-block"
+              initial={{ opacity: 0, y: up }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0 }}
+              transition={{ duration: dur, delay: 0 }}
             >
               <p className="bg-blue-100 dark:bg-blue-950/50 text-blue-900 dark:text-blue-200 text-xs font-semibold px-3 py-2 md:px-4 md:py-2 rounded-full border border-blue-200 dark:border-blue-800">
                 {t.hero.beta}
@@ -72,26 +77,26 @@ export const HeroSection = () => {
             />
           </div>
           <motion.p
-            className="text-sm sm:text-base text-gray-600 dark:text-gray-300 text-center md:text-left max-w-2xl mb-6 md:mb-8 leading-relaxed"
-            initial={{ opacity: 0, y: 20 }}
+            className="text-sm sm:text-base text-gray-600 dark:text-gray-300 text-center md:text-left max-w-2xl mb-4 sm:mb-6 md:mb-8 leading-relaxed"
+            initial={{ opacity: 0, y: up }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: dur, delay: isPhone ? 0.12 : 0.3 }}
           >
             {t.hero.text}
           </motion.p>
           <motion.p
-            className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 text-center md:text-left max-w-2xl mb-8 md:mb-10 font-medium tracking-wide"
-            initial={{ opacity: 0, y: 20 }}
+            className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 text-center md:text-left max-w-2xl mb-5 sm:mb-8 md:mb-10 font-medium tracking-wide"
+            initial={{ opacity: 0, y: up }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.35 }}
+            transition={{ duration: dur, delay: isPhone ? 0.16 : 0.35 }}
           >
             {t.hero.slogan}
           </motion.p>
           <motion.div
             className="flex gap-3 md:gap-4 rounded-lg flex-wrap justify-center md:justify-start"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: up }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: dur, delay: isPhone ? 0.2 : 0.4 }}
           >
             <button onClick={handleJoinWaitlist} className="bg-[var(--dark-bg)] opacity-90 hover:opacity-100 text-white font-semibold py-2 md:py-3 px-6 md:px-8 rounded-xl transition-all text-sm">
               {t.hero.ctaPrimary}
@@ -117,17 +122,19 @@ export const HeroSection = () => {
         </motion.div>
       </div>
       <motion.div
-        className="flex justify-center pb-6 md:pb-8"
+        className="flex justify-center pb-4 sm:pb-6 md:pb-8"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.6, delay: 0.5 }}
+        transition={{ duration: dur, delay: isPhone ? 0.25 : 0.5 }}
       >
         <button
           onClick={handleJoinWaitlist}
-          className="cursor-pointer hover:scale-110 transition-transform"
+          className={`cursor-pointer transition-transform ${isPhone ? "hover:scale-105 active:scale-95" : "hover:scale-110"}`}
           aria-label="Scroll to join form"
         >
-          <ChevronDown className="text-gray-600 dark:text-gray-300 animate-bounce w-6 md:w-8 hover:text-gray-800 dark:hover:text-white" />
+          <ChevronDown
+            className={`text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white w-6 md:w-8 ${isPhone ? "" : "animate-bounce"}`}
+          />
         </button>
       </motion.div>
     </section>
