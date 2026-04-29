@@ -1,14 +1,10 @@
 import { motion } from "framer-motion";
-import { SplitText } from "@/components/animations/SplitText";
 import { CheckCircle2 } from "lucide-react";
+import { useLocale } from "@/contexts/LocaleContext";
 
 export const AdvantagesSection = () => {
-    const advantages = [
-        "Morocco-first design: built around local habits and real usage",
-        "Clear actions: fewer steps, less confusion, better flow",
-        "Affordable by intention: focused on cutting the typical pain of transfer fees",
-        "Built to scale: one wallet that can support more services over time",
-    ];
+    const { t } = useLocale();
+    const advantages = t.advantages.list;
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -31,7 +27,7 @@ export const AdvantagesSection = () => {
     };
 
     return (
-        <section className="py-16 md:py-24 px-4 sm:px-6 md:px-8 bg-white">
+        <section className="py-16 md:py-24 px-4 sm:px-6 md:px-8 bg-white dark:bg-[#070f1f]">
             <div className="max-w-4xl mx-auto">
                 {/* Primary Heading */}
                 <motion.div
@@ -42,9 +38,9 @@ export const AdvantagesSection = () => {
                     className="-mb-1"
                 >
                     <h2 className="primary-heading">
-                        A simpler way to move money — without
+                        {t.advantages.title1}
                         <br />
-                        paying "extra" to do something basic
+                        {t.advantages.title2}
                     </h2>
                 </motion.div>
 
@@ -56,7 +52,7 @@ export const AdvantagesSection = () => {
                     viewport={{ once: true }}
                     className="secondary-heading"
                 >
-                    In Morocco, sending money can be more expensive than it should be. Nexa Pay is designed to remove unnecessary costs and complexity by making transfers and payments clear, fast, and affordable.
+                    {t.advantages.text}
                 </motion.p>
 
                 {/* What Makes Nexa Pay Different */}
@@ -66,8 +62,8 @@ export const AdvantagesSection = () => {
                     transition={{ duration: 0.6, delay: 0.2 }}
                     viewport={{ once: true }}
                 >
-                    <h3 className="text-lg font-bold text-gray-900 mb-4 ">
-                        What makes Nexa Pay different:
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-4 ">
+                        {t.advantages.listTitle}
                     </h3>
 
                     <motion.ul
@@ -79,8 +75,8 @@ export const AdvantagesSection = () => {
                     >
                         {advantages.map((advantage, index) => (
                             <motion.li key={index} variants={itemVariants} className="flex gap-2 items-start">
-                                <CheckCircle2 className="size-5 text-blue-600 flex-shrink-0 mt-0.5" />
-                                <span className="text-gray-700 text-sm leading-relaxed">
+                                <CheckCircle2 className="size-5 text-blue-600 dark:text-blue-300 flex-shrink-0 mt-0.5" />
+                                <span className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
                                     {advantage}
                                 </span>
                             </motion.li>

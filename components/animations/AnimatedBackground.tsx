@@ -14,7 +14,7 @@ export const AnimatedBackground = () => {
   };
 
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    <div className="absolute inset-0 overflow-hidden pointer-events-none dark:hidden">
       {/* Top-left blob */}
       <motion.div
         className="absolute -top-40 -left-40 w-80 h-80 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20"

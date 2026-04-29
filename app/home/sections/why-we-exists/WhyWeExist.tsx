@@ -1,14 +1,10 @@
 import { motion } from "framer-motion";
-import { SplitText } from "@/components/animations/SplitText";
 import { CheckCircle2 } from "lucide-react";
+import { useLocale } from "@/contexts/LocaleContext";
 
 export const WhyWeExist = () => {
-    const issues = [
-        "High money-transfer fees that quietly add up",
-        "Transfers that feel slow, unclear, or complicated",
-        "Merchant payments that still depend too much on cash",
-        "Too many apps for daily needs (payments, services, and more)",
-    ];
+    const { t } = useLocale();
+    const issues = t.why.fixingList;
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -31,7 +27,7 @@ export const WhyWeExist = () => {
     };
 
     return (
-        <section className="py-16 md:py-24 px-4 sm:px-6 md:px-8 bg-white">
+        <section id="overview" className="py-16 md:py-24 px-4 sm:px-6 md:px-8 bg-white dark:bg-[#070f1f]">
             <div className="max-w-4xl mx-auto">
                 {/* Primary Heading */}
                 <motion.div
@@ -42,7 +38,7 @@ export const WhyWeExist = () => {
                     className="-mb-1"
                 >
                     <h2 className="primary-heading">
-                        Built by the people, for the people
+                        {t.why.title}
                     </h2>
                 </motion.div>
 
@@ -54,7 +50,7 @@ export const WhyWeExist = () => {
                     viewport={{ once: true }}
                     className="secondary-heading"
                 >
-                    Let's keep it real: basic money movement shouldn't come with unnecessary steps, stress, or costs. Nexa Pay was created to solve the problems we face on this side — the everyday issues that waste time and make simple transactions harder than they should be.
+                    {t.why.text}
                 </motion.p>
 
                 {/* Content Section */}
@@ -66,8 +62,8 @@ export const WhyWeExist = () => {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         viewport={{ once: true }}
                     >
-                        <h3 className="text-lg font-bold text-gray-900 mb-4">
-                            What we're fixing:
+                        <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-4">
+                            {t.why.fixingTitle}
                         </h3>
                         <motion.ul
                             className="space-y-3"
@@ -82,8 +78,8 @@ export const WhyWeExist = () => {
                                     variants={itemVariants}
                                     className="flex gap-3 items-start"
                                 >
-                                    <CheckCircle2 className="size-4 text-green-500 flex-shrink-0 mt-0.5" />
-                                    <span className="text-gray-700 text-sm leading-relaxed">{issue}</span>
+                                    <CheckCircle2 className="size-4 text-green-500 dark:text-green-400 flex-shrink-0 mt-0.5" />
+                                    <span className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">{issue}</span>
                                 </motion.li>
                             ))}
                         </motion.ul>
@@ -96,12 +92,12 @@ export const WhyWeExist = () => {
                         transition={{ duration: 0.6, delay: 0.3 }}
                         viewport={{ once: true }}
                     >
-                        <h3 className="text-lg font-bold text-gray-900 mb-4">
-                            What we're building instead:
+                        <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-4">
+                            {t.why.buildingTitle}
                         </h3>
-                        <div className="bg-blue-50 border-l-4 border-[#0e2771] p-6 rounded-lg">
-                            <p className="text-gray-900 leading-relaxed font-medium text-sm">
-                                A secure Moroccan wallet that keeps things straightforward — less friction, fewer steps, and lower transfer costs, so more value stays with people.
+                        <div className="bg-blue-50 dark:bg-blue-950/35 border-l-4 border-[#0e2771] dark:border-blue-500 p-6 rounded-lg">
+                            <p className="text-gray-900 dark:text-gray-100 leading-relaxed font-medium text-sm">
+                                {t.why.buildingText}
                             </p>
                         </div>
                     </motion.div>

@@ -2,37 +2,27 @@ import React from "react"
 import { UserPlus, CheckCircle, Rocket } from "lucide-react"
 import { ScrollFade } from "@/components/animations/ScrollFade"
 import { ScrollStagger } from "@/components/animations/ScrollStagger"
-
-const STEPS = [
-  {
-    icon: UserPlus,
-    title: "Join the waitlist",
-    description: "Share your details so we can prioritize Morocco's most common use cases."
-  },
-  {
-    icon: CheckCircle,
-    title: "Get selected for private beta",
-    description: "We onboard in small groups to keep performance smooth and support responsive."
-  },
-  {
-    icon: Rocket,
-    title: "Start using Nexa Pay",
-    description: "Try Nexa Pay features during beta while we expand services and coverage."
-  }
-]
+import { useLocale } from "@/contexts/LocaleContext"
 
 export const AccessSection = () => {
+  const { t } = useLocale();
+  const icons = [UserPlus, CheckCircle, Rocket];
+  const steps = t.access.steps.map((step, index) => ({
+    icon: icons[index] ?? UserPlus,
+    title: step.title,
+    description: step.description,
+  }));
   return (
-    <section id="howItWorks" className="bg-white py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-10">
+    <section id="howItWorks" className="bg-white dark:bg-[#070f1f] py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-10">
       <ScrollFade className="max-w-5xl mx-auto text-center">
         {/* Title */}
         <h2 className="primary-heading mb-6 md:mb-10">
-          How Early Access Works
+          {t.access.title}
         </h2>
 
         {/* Steps */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-12">
-          {STEPS.map((step, index) => (
+          {steps.map((step, index) => (
             <ScrollStagger key={index} index={index}>
               <StepCard {...step} />
             </ScrollStagger>
@@ -40,9 +30,9 @@ export const AccessSection = () => {
         </div>
 
         {/* Notice */}
-        <div className="flex gap-1 items-center justify-center mt-8 md:mt-10 bg-yellow-50 border border-yellow-200 rounded-lg md:rounded-xl py-3 md:py-4 px-4 md:px-6 text-xs sm:text-sm text-yellow-800">
-          <p className="font-semibold">Beta Note:</p>
-          Access is limited. Features and limits apply during testing.
+        <div className="flex gap-1 items-center justify-center mt-8 md:mt-10 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-600/40 rounded-lg md:rounded-xl py-3 md:py-4 px-4 md:px-6 text-xs sm:text-sm text-yellow-800 dark:text-yellow-200">
+          <p className="font-semibold">{t.access.noteLabel}</p>
+          {t.access.noteText}
         </div>
       </ScrollFade>
     </section>
@@ -56,10 +46,10 @@ const StepCard = ({ icon: Icon, title, description }) => (
       <Icon size={24} />
     </div>
 
-    <h3 className="text-base md:text-lg font-medium text-gray-900 mb-2">
+    <h3 className="text-base md:text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">
       {title}
     </h3>
-    <p className="text-xs md:text-sm text-gray-600 leading-relaxed">
+    <p className="text-xs md:text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
       {description}
     </p>
   </div>

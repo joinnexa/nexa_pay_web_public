@@ -66,7 +66,8 @@ export async function POST(request: NextRequest) {
 
   const validated = validateBody(body);
   if (!validated.ok) {
-    return NextResponse.json({ message: validated.message }, { status: 400 });
+    const message = "message" in validated ? validated.message : "Invalid body";
+    return NextResponse.json({ message }, { status: 400 });
   }
   const { data: payload } = validated;
 

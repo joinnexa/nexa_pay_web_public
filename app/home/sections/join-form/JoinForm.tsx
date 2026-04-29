@@ -14,8 +14,10 @@ import { Element } from "react-scroll";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { ScrollFade } from "@/components/animations/ScrollFade";
+import { useLocale } from "@/contexts/LocaleContext";
 
 export const JoinForm = () => {
+  const { t } = useLocale();
   const [formData, setFormData] = useState({
     full_name: "",
     phone_number: "",
@@ -72,7 +74,7 @@ export const JoinForm = () => {
       await submitForm();
       setSubmitStatus({
         type: "success",
-        message: "Thank you! Your request has been submitted successfully.",
+        message: t.form.success,
       });
       // Reset form on success
       setFormData({
@@ -88,7 +90,7 @@ export const JoinForm = () => {
         message:
           error instanceof Error
             ? error.message
-            : "Something went wrong. Please try again.",
+            : t.form.genericError,
       });
     } finally {
       submittingRef.current = false;
@@ -105,19 +107,19 @@ export const JoinForm = () => {
           preserveAspectRatio="none"
           className="w-full h-auto"
         >
-          <path className="fill-gray-100" d="M0,80V100H1000V30L0,80z"></path>
+          <path className="fill-gray-100 dark:fill-[#070f1f]" d="M0,80V100H1000V30L0,80z"></path>
         </svg>
       </div>
-      <div className="bg-gray-100">
+      <div className="bg-gray-100 dark:bg-[#070f1f]">
         <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8">
           <ScrollFade className="max-w-xl mx-auto">
             {/* Header */}
             <div className="text-center mb-8 md:mb-12">
               <h2 className="primary-heading">
-                Request Early Access
+                {t.form.title}
               </h2>
               <p className="secondary-heading">
-                Join the waitlist to be considered for Nexa Pay’s private beta in Morocco.
+                {t.form.subtitle}
               </p>
             </div>
 
@@ -142,15 +144,15 @@ export const JoinForm = () => {
                   htmlFor="full_name"
                   className="text-xs sm:text-sm md:text-base"
                 >
-                  Full Name <span className="text-red-500">*</span>
+                  {t.form.fullName} <span className="text-red-500">*</span>
                 </Label>
                 <Input
                   id="full_name"
                   name="full_name"
-                  placeholder="Enter your full name"
+                  placeholder={t.form.fullNamePlaceholder}
                   value={formData.full_name}
                   onChange={handleInputChange}
-                  className="bg-white"
+                  className="bg-white dark:bg-[#101b31] dark:text-gray-100 dark:border-white/10"
                   required
                 />
               </div>
@@ -161,16 +163,16 @@ export const JoinForm = () => {
                   htmlFor="phone_number"
                   className="text-xs sm:text-sm md:text-base"
                 >
-                  Phone Number <span className="text-red-500">*</span>
+                  {t.form.phone} <span className="text-red-500">*</span>
                 </Label>
                 <Input
                   id="phone_number"
                   name="phone_number"
                   type="tel"
-                  placeholder="06XXXXXXXX"
+                  placeholder={t.form.phonePlaceholder}
                   value={formData.phone_number}
                   onChange={handleInputChange}
-                  className="bg-white"
+                  className="bg-white dark:bg-[#101b31] dark:text-gray-100 dark:border-white/10"
                   required
                 />
               </div>
@@ -181,16 +183,16 @@ export const JoinForm = () => {
                   htmlFor="email"
                   className="text-xs sm:text-sm md:text-base"
                 >
-                  Email <span className="text-red-500">*</span>
+                  {t.form.email} <span className="text-red-500">*</span>
                 </Label>
                 <Input
                   id="email"
                   name="email"
                   type="email"
-                  placeholder="your@email.com"
+                  placeholder={t.form.emailPlaceholder}
                   value={formData.email}
                   onChange={handleInputChange}
-                  className="bg-white"
+                  className="bg-white dark:bg-[#101b31] dark:text-gray-100 dark:border-white/10"
                   required
                 />
               </div>
@@ -201,14 +203,14 @@ export const JoinForm = () => {
                   htmlFor="city"
                   className="text-xs sm:text-sm md:text-base"
                 >
-                  City <span className="text-red-500">*</span>
+                  {t.form.city} <span className="text-red-500">*</span>
                 </Label>
                 <Select disabled defaultValue="Casablanca">
-                  <SelectTrigger className="bg-white">
-                    <SelectValue placeholder="Select city" />
+                  <SelectTrigger className="bg-white dark:bg-[#101b31] dark:text-gray-100 dark:border-white/10">
+                    <SelectValue placeholder={t.form.cityValue} />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="Casablanca">Casablanca</SelectItem>
+                    <SelectItem value="Casablanca">{t.form.cityValue}</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -219,15 +221,15 @@ export const JoinForm = () => {
                   htmlFor="how_will_use_nexa"
                   className="text-xs sm:text-sm md:text-base"
                 >
-                  How will you use Nexa Pay? (Optional)
+                  {t.form.usage}
                 </Label>
                 <Textarea
                   id="how_will_use_nexa"
                   name="how_will_use_nexa"
-                  placeholder="Tell us how you plan to use Nexa Pay..."
+                  placeholder={t.form.usagePlaceholder}
                   value={formData.how_will_use_nexa}
                   onChange={handleInputChange}
-                  className="min-h-[100px] md:min-h-[120px] bg-white"
+                  className="min-h-[100px] md:min-h-[120px] bg-white dark:bg-[#101b31] dark:text-gray-100 dark:border-white/10"
                 />
               </div>
 
@@ -237,12 +239,12 @@ export const JoinForm = () => {
                 className="w-full h-10 sm:h-11 md:h-12 text-xs sm:text-sm md:text-base font-medium bg-[var(--dark-bg)] opacity-90 hover:opacity-100 text-white rounded-lg transition-all"
                 disabled={isLoading}
               >
-                {isLoading ? "Submitting..." : "Request Early Access"}
+                {isLoading ? t.form.submitting : t.form.submit}
               </Button>
 
               {/* Privacy Note */}
-              <p className="text-center text-xs text-gray-600 mt-4">
-                We only use your information to contact you about beta access and product updates.
+              <p className="text-center text-xs text-gray-600 dark:text-gray-300 mt-4">
+                {t.form.privacy}
               </p>
             </form>
           </ScrollFade>
@@ -255,7 +257,7 @@ export const JoinForm = () => {
           preserveAspectRatio="none"
           className="w-full h-auto"
         >
-          <path className="fill-gray-100" d="M1000,0V-20H0V50L1000,0z"></path>
+          <path className="fill-gray-100 dark:fill-[#070f1f]" d="M1000,0V-20H0V50L1000,0z"></path>
         </svg>
       </div>
     </Element>
