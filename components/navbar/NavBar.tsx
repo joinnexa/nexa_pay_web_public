@@ -259,7 +259,7 @@ export const NavBar = () => {
         <div className="mx-auto flex w-full max-w-full flex-col">
           <div
             className={cn(
-              "flex h-[52px] shrink-0 items-center justify-between gap-2.5 px-3",
+              "relative z-20 grid h-[52px] shrink-0 grid-cols-3 items-center gap-1 px-3",
               "rounded-t-[18px] border border-b-0",
               "backdrop-blur-[14px] backdrop-saturate-150",
               "shadow-[0_20px_60px_rgba(20,31,52,0.08)] dark:shadow-[0_20px_70px_rgba(0,0,0,0.34)]",
@@ -268,66 +268,70 @@ export const NavBar = () => {
                 : "border-gray-200/80 bg-white/[0.86] text-gray-900"
             )}
           >
-            <button
-              type="button"
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              className="flex min-w-0 shrink items-center hover:opacity-85 transition-opacity"
-            >
-              <Image
-                src="/images/ressources/nexa-pay.png"
-                alt="Nexa Pay"
-                width={204}
-                height={34}
-                className="h-[34px] w-auto max-h-[34px] object-contain object-left"
-              />
-            </button>
-            <div className="flex shrink-0 items-center gap-2">
-              <div className="relative">
-                <button
-                  type="button"
-                  onClick={() => setIsMobileLocaleOpen((prev) => !prev)}
-                  className={cn(
-                    "inline-flex min-h-[38px] min-w-[4.75rem] items-center justify-center rounded-full border px-3 text-xs font-extrabold tracking-wider transition-colors",
-                    theme === "dark"
-                      ? "border-white/18 bg-white/[0.06] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]"
-                      : "border-gray-300/90 bg-gradient-to-b from-white to-gray-50 text-gray-900 shadow-sm"
-                  )}
-                  aria-label={t.nav.language}
-                >
-                  {locale.toUpperCase()}
-                </button>
-                {isMobileLocaleOpen && (
-                  <div
-                    className={cn(
-                      "absolute right-0 top-full z-[60] mt-2 min-w-24 rounded-xl border p-1.5 shadow-xl backdrop-blur-xl",
-                      theme === "dark"
-                        ? "border-white/15 bg-[rgba(17,26,42,0.95)]"
-                        : "border-gray-200 bg-white/95"
-                    )}
-                  >
-                    {(["en", "fr", "ar"] as Locale[]).map((item) => (
-                      <button
-                        key={item}
-                        type="button"
-                        onClick={() => {
-                          setLocale(item);
-                          setIsMobileLocaleOpen(false);
-                        }}
-                        className={cn(
-                          "w-full rounded-lg py-2 text-sm font-semibold",
-                          item === locale
-                            ? "bg-blue-600 text-white"
-                            : theme === "dark"
-                              ? "text-gray-100 hover:bg-white/10"
-                              : "text-gray-800 hover:bg-gray-100"
-                        )}
-                      >
-                        {item.toUpperCase()}
-                      </button>
-                    ))}
-                  </div>
+            <div className="flex min-w-0 justify-start">
+              <button
+                type="button"
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                className="flex min-w-0 shrink items-center hover:opacity-85 transition-opacity"
+              >
+                <Image
+                  src="/images/ressources/nexa-pay.png"
+                  alt="Nexa Pay"
+                  width={204}
+                  height={34}
+                  className="h-[34px] w-auto max-h-[34px] object-contain object-left"
+                />
+              </button>
+            </div>
+
+            <div className="relative z-30 flex justify-center">
+              <button
+                type="button"
+                onClick={() => setIsMobileLocaleOpen((prev) => !prev)}
+                className={cn(
+                  "inline-flex min-h-[38px] min-w-[4.75rem] items-center justify-center rounded-full border px-3 text-xs font-extrabold tracking-wider transition-colors",
+                  theme === "dark"
+                    ? "border-white/18 bg-white/[0.06] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]"
+                    : "border-gray-300/90 bg-gradient-to-b from-white to-gray-50 text-gray-900 shadow-sm"
                 )}
-              </div>
+                aria-label={t.nav.language}
+              >
+                {locale.toUpperCase()}
+              </button>
+              {isMobileLocaleOpen && (
+                <div
+                  className={cn(
+                    "absolute left-1/2 top-full z-[100] mt-1.5 min-w-24 -translate-x-1/2 rounded-xl border p-1.5 shadow-xl backdrop-blur-xl",
+                    theme === "dark"
+                      ? "border-white/15 bg-[rgba(17,26,42,0.95)]"
+                      : "border-gray-200 bg-white/95"
+                  )}
+                >
+                  {(["en", "fr", "ar"] as Locale[]).map((item) => (
+                    <button
+                      key={item}
+                      type="button"
+                      onClick={() => {
+                        setLocale(item);
+                        setIsMobileLocaleOpen(false);
+                      }}
+                      className={cn(
+                        "w-full rounded-lg py-2 text-sm font-semibold",
+                        item === locale
+                          ? "bg-blue-600 text-white"
+                          : theme === "dark"
+                            ? "text-gray-100 hover:bg-white/10"
+                            : "text-gray-800 hover:bg-gray-100"
+                      )}
+                    >
+                      {item.toUpperCase()}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <div className="flex justify-end">
               <button
                 type="button"
                 onClick={toggleTheme}
@@ -347,7 +351,7 @@ export const NavBar = () => {
           <nav
             aria-label="Mobile sections"
             className={cn(
-              "flex h-[46px] items-center gap-2 overflow-x-auto px-2.5",
+              "relative z-10 flex h-[46px] items-center gap-2 overflow-x-auto px-2.5",
               "rounded-b-[18px] border border-t",
               "backdrop-blur-[14px] backdrop-saturate-150",
               "shadow-[0_20px_60px_rgba(20,31,52,0.08)] dark:shadow-[0_20px_70px_rgba(0,0,0,0.34)]",
