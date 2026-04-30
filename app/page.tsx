@@ -2,7 +2,7 @@
 
 import React from "react";
 import { HeroSection } from "./home/sections/hero/Hero";
-import { Footer } from "@/components/footer/Footer";
+import Footer from "@/components/footer/Footer";
 import { AboutSection } from "./home/sections/about/About";
 import { AccessSection } from "./home/sections/access/Access";
 import { TrustSefetySection } from "./home/sections/trust-safety/TrustSefety";

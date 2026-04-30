@@ -39,9 +39,8 @@ export const HeroSection = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[2fr_1fr] items-center px-4 sm:px-6 md:px-8 pb-7 sm:pb-10 md:pb-5 flex-1 relative z-10 gap-5 sm:gap-8 md:gap-12 pt-3 sm:pt-0">
         {/* Left Content */}
         <div className="flex flex-col items-center md:items-start justify-center">
-          <div className="flex items-center justify-start gap-2">
+          <div className="flex flex-col items-center md:items-start gap-2 mb-3 sm:mb-4">
             <motion.div
-              className="mb-3 sm:mb-4"
               initial={{ opacity: 0, y: up }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: dur, delay: stagger }}
@@ -49,14 +48,14 @@ export const HeroSection = () => {
               <img
                 src="/images/ressources/nexa-pay-no-bg.png"
                 alt="Nexa Pay Logo"
-                className="w-10 object-contain rounded-full"
+                className="w-10 sm:w-11 object-contain rounded-full"
               />
             </motion.div>
             <motion.div
-              className="mb-3 sm:mb-4 inline-block"
+              className="inline-block"
               initial={{ opacity: 0, y: up }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: dur, delay: 0 }}
+              transition={{ duration: dur, delay: stagger * 2 }}
             >
               <p className="bg-blue-100 dark:bg-blue-950/50 text-blue-900 dark:text-blue-200 text-sm font-bold px-3 py-2 md:px-4 md:py-2 rounded-full border border-blue-200 dark:border-blue-800 tracking-wide">
                 {t.hero.beta}

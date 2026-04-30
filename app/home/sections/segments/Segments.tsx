@@ -5,7 +5,7 @@ import { useLocale } from "@/contexts/LocaleContext";
 
 export const SegmentsSection = () => {
   const { t } = useLocale();
-  const iconMap = [UserRound, Store, Building2];
+  const iconMap = [Store, UserRound, Building2];
 
   return (
     <section id="segments" className="bg-gray-50 dark:bg-[#070f1f] py-8 sm:py-14 md:py-20 px-4 sm:px-6 md:px-10">

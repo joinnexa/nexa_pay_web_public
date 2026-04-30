@@ -32,7 +32,7 @@ const translations = {
       switchToDark: "Switch to dark mode",
     },
     hero: {
-      beta: "Private Beta — Invite Only",
+      beta: "Private Beta — Limited Seats",
       title1: "The Moroccan wallet for modern daily payments,",
       title2: "transfers, and merchant checkout",
       text:
@@ -113,12 +113,12 @@ const translations = {
         "The platform is shaped for people sending money daily, merchants accepting digital payments, and partners enabling reliable local operations.",
       cards: [
         {
-          title: "Individuals",
-          text: "Fast transfers, transparent costs, and a cleaner wallet experience for daily financial routines.",
-        },
-        {
           title: "Merchants",
           text: "QR-based acceptance and clearer transaction traceability for in-store and neighborhood commerce.",
+        },
+        {
+          title: "Individuals",
+          text: "Fast transfers, transparent costs, and a cleaner wallet experience for daily financial routines.",
         },
         {
           title: "Partners",
@@ -231,6 +231,13 @@ const translations = {
       subtitle: "Private Beta — Morocco-first payments and services ecosystem.",
       contactLabel: "Contact",
       secured: "Secured by Nexa. Operated by Nexa.",
+      disclaimer:
+        "Nexa Pay is in private beta. Features, availability, and fees may change. Nothing on this page is financial, legal, tax, or investment advice. Banking services, when offered, will be provided by licensed partners where required.",
+      quickLinks: "Quick links",
+      social: "Social",
+      instagramJoin: "@joinnexa",
+      instagramPay: "nexapay.ma",
+      rightsReserved: "All rights reserved.",
     },
     emails: ["contact@joinnexa.ma", "support@joinnexa.ma", "partnerships@joinnexa.ma"],
   },
@@ -250,7 +257,7 @@ const translations = {
       switchToDark: "Passer au mode sombre",
     },
     hero: {
-      beta: "Bêta privée — sur invitation",
+      beta: "Bêta privée — places limitées",
       title1: "Le wallet marocain pour les paiements quotidiens,",
       title2: "les transferts et l'encaissement commerçant",
       text:
@@ -330,12 +337,12 @@ const translations = {
         "La plateforme répond aux besoins des particuliers, des commerçants et des partenaires qui construisent des opérations locales fiables.",
       cards: [
         {
-          title: "Particuliers",
-          text: "Transferts rapides, coûts transparents et expérience wallet plus fluide au quotidien.",
-        },
-        {
           title: "Commerçants",
           text: "Encaissement QR et meilleure traçabilité des transactions pour les ventes locales.",
+        },
+        {
+          title: "Particuliers",
+          text: "Transferts rapides, coûts transparents et expérience wallet plus fluide au quotidien.",
         },
         {
           title: "Partenaires",
@@ -448,6 +455,13 @@ const translations = {
       subtitle: "Bêta privée — écosystème de paiements et services pensé pour le Maroc.",
       contactLabel: "Contact",
       secured: "Sécurisé par Nexa. Opéré par Nexa.",
+      disclaimer:
+        "Nexa Pay est en bêta privée. Fonctionnalités, disponibilité et frais peuvent évoluer. Rien sur cette page ne constitue un conseil financier, juridique, fiscal ou en investissement. Les services bancaires, le cas échéant, seront fournis par des partenaires agréés lorsque la réglementation l'exige.",
+      quickLinks: "Liens rapides",
+      social: "Réseaux sociaux",
+      instagramJoin: "@joinnexa",
+      instagramPay: "nexapay.ma",
+      rightsReserved: "Tous droits réservés.",
     },
     emails: ["contact@joinnexa.ma", "support@joinnexa.ma", "partnerships@joinnexa.ma"],
   },
@@ -467,7 +481,7 @@ const translations = {
       switchToDark: "التبديل إلى الوضع الداكن",
     },
     hero: {
-      beta: "نسخة تجريبية خاصة — بدعوة فقط",
+      beta: "نسخة تجريبية خاصة — مقاعد محدودة",
       title1: "المحفظة المغربية للمدفوعات اليومية،",
       title2: "التحويلات، والدفع لدى التجار",
       text:
@@ -542,12 +556,12 @@ const translations = {
         "المنصة مبنية للأفراد الذين يحولون يوميا، والتجار الذين يستقبلون المدفوعات الرقمية، والشركاء الذين يدعمون التشغيل المحلي.",
       cards: [
         {
-          title: "الأفراد",
-          text: "تحويلات أسرع، رسوم واضحة، وتجربة محفظة أبسط للاستخدام اليومي.",
-        },
-        {
           title: "التجار",
           text: "قبول مدفوعات عبر QR مع تتبع أوضح للمعاملات في المتاجر المحلية.",
+        },
+        {
+          title: "الأفراد",
+          text: "تحويلات أسرع، رسوم واضحة، وتجربة محفظة أبسط للاستخدام اليومي.",
         },
         {
           title: "الشركاء",
@@ -655,6 +669,13 @@ const translations = {
       subtitle: "نسخة تجريبية خاصة — منظومة مدفوعات وخدمات موجهة للمغرب.",
       contactLabel: "التواصل",
       secured: "مؤمن بواسطة Nexa. يُدار بواسطة Nexa.",
+      disclaimer:
+        "Nexa Pay في مرحلة تجريبية خاصة. قد تتغير الميزات والتوفر والرسوم. لا يُعد أي محتوى على هذه الصفحة استشارة مالية أو قانونية أو ضريبية أو استثمارية. الخدمات المصرفية، عند توفرها، ستقدم عبر شركاء مرخصين عند الاقتضاء.",
+      quickLinks: "روابط سريعة",
+      social: "وسائل التواصل",
+      instagramJoin: "@joinnexa",
+      instagramPay: "nexapay.ma",
+      rightsReserved: "جميع الحقوق محفوظة.",
     },
     emails: ["contact@joinnexa.ma", "support@joinnexa.ma", "partnerships@joinnexa.ma"],
   },
