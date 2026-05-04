@@ -4,7 +4,12 @@ import path from "path";
 
 const BACKEND_URL = process.env.BACKEND_URL;
 const PROXY_TIMEOUT_MS = 5000;
-const ALLOWED_CITY = "Casablanca";
+const WAITLIST_SOURCE = "nexa_pay_web_public";
+const ALLOWED_USER_TYPES = new Set([
+  "consumer",
+  "merchant",
+  "investor",
+]);
 
 let hasWarnedBackendFallback = false;
 
@@ -20,11 +25,15 @@ function validateBody(body: unknown): { ok: true; data: Record<string, unknown> 
   const email = typeof o.email === "string" ? o.email.trim() : "";
   const city = typeof o.city === "string" ? o.city.trim() : "";
   const how_will_use_nexa = typeof o.how_will_use_nexa === "string" ? o.how_will_use_nexa.trim().slice(0, 2000) : "";
+  const rawUserType = typeof o.user_type === "string" ? o.user_type.trim().toLowerCase() : "";
 
   if (!full_name || full_name.length > 255) return { ok: false, message: "Full name is required" };
   if (!phone_number || phone_number.length > 50) return { ok: false, message: "Phone number is required" };
   if (!EMAIL_REGEX.test(email)) return { ok: false, message: "A valid email is required" };
-  if (city !== ALLOWED_CITY) return { ok: false, message: "Currently only Casablanca is accepted for the waitlist" };
+  if (!city || city.length > 100) return { ok: false, message: "City is required" };
+  if (rawUserType && !ALLOWED_USER_TYPES.has(rawUserType)) {
+    return { ok: false, message: "Invalid user_type value" };
+  }
 
   return {
     ok: true,
@@ -34,6 +43,11 @@ function validateBody(body: unknown): { ok: true; data: Record<string, unknown> 
       email,
       city,
       how_will_use_nexa: how_will_use_nexa || undefined,
+      user_type: rawUserType || undefined,
+      source:
+        typeof o.source === "string" && o.source.trim().length > 0
+          ? o.source.trim().slice(0, 100)
+          : WAITLIST_SOURCE,
     },
   };
 }

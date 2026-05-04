@@ -24,10 +24,8 @@ export const NavBar = () => {
   const navItems = [
     { label: t.nav.why, icon: BookSearch, target: "overview", offset: -50 },
     { label: t.nav.services, icon: Lightbulb, target: "about", offset: -20 },
-    { label: t.nav.pillars, icon: Shield, target: "pillars", offset: -50 },
     { label: t.nav.howItWorks, icon: BookOpen, target: "howItWorks", offset: -50 },
     { label: t.nav.segments, icon: Users, target: "segments", offset: -50 },
-    { label: t.nav.roadmap, icon: Phone, target: "roadmap", offset: -50 },
     { label: t.nav.trust, icon: Shield, target: "trust", offset: -50 },
     { label: t.nav.contact, icon: Phone, target: "contact", offset: -20 },
   ];
@@ -88,7 +86,7 @@ export const NavBar = () => {
   useEffect(() => {
     const updateMaxWidth = () => {
       const shrinkValue = shrink.get();
-      const endValue = isSmallScreen ? 85 : 75;
+      const endValue = isSmallScreen ? 85 : 88;
       const currentPercent = 100 + (endValue - 100) * shrinkValue;
       maxWidth.set(`${currentPercent}%`);
     };
@@ -167,7 +165,7 @@ export const NavBar = () => {
               >
                 <div className="flex-shrink-0">
                   <Image
-                    src="/images/ressources/nexa-pay-no-bg.png"
+                    src="/images/ressources/nexa-pay.png"
                     alt="Nexa Pay"
                     width={204}
                     height={34}
@@ -177,7 +175,7 @@ export const NavBar = () => {
               </button>
 
               {/* Right - Navigation Links */}
-              <div className="flex items-center gap-3 md:gap-4">
+              <div className="flex items-center gap-2 md:gap-3">
                 {desktopNavItems.map(({ label, target, offset }) => (
                   <button
                     key={target}
@@ -189,6 +187,11 @@ export const NavBar = () => {
                     <span>{label}</span>
                   </button>
                 ))}
+                <button onClick={() => handleScroll("contact", -20)} className={`text-sm font-semibold transition-colors whitespace-nowrap ${
+                  theme === "dark" ? "text-gray-200 hover:text-white" : "text-gray-700 hover:text-gray-900"
+                }`}>
+                  {t.nav.contact}
+                </button>
                 <div className="relative">
                   <button
                     type="button"
@@ -239,12 +242,7 @@ export const NavBar = () => {
                 >
                   {theme === "dark" ? <Sun className="size-4" /> : <Moon className="size-4" />}
                 </button>
-                <button onClick={() => handleScroll("contact", -20)} className={`text-sm font-semibold transition-colors whitespace-nowrap ${
-                  theme === "dark" ? "text-gray-200 hover:text-white" : "text-gray-700 hover:text-gray-900"
-                }`}>
-                  {t.nav.contact}
-                </button>
-                <button onClick={handleJoinWaitlist} className="bg-[var(--dark-bg)] opacity-90 hover:opacity-100 text-white font-bold py-2 px-3 md:px-4 rounded-lg transition-all text-sm whitespace-nowrap">
+                <button onClick={handleJoinWaitlist} className="bg-[var(--dark-bg)] opacity-90 hover:opacity-100 text-white font-bold py-2 px-3 rounded-lg transition-all text-sm whitespace-nowrap">
                   {t.nav.join}
                 </button>
               </div>
