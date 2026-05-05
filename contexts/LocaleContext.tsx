@@ -1,6 +1,13 @@
 "use client";
 
-import React, { createContext, useContext, useEffect, useMemo, useState } from "react";
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useState,
+} from "react";
 
 export type Locale = "en" | "fr" | "ar";
 
@@ -693,24 +700,38 @@ const translations = {
   },
 };
 
+function localeFromNavigatorLanguages(): Locale {
+  if (typeof navigator === "undefined") return "en";
+  const list =
+    typeof navigator.languages !== "undefined" && navigator.languages.length > 0
+      ? navigator.languages
+      : [navigator.language];
+  for (const tag of list) {
+    const base = String(tag).split("-")[0]?.toLowerCase();
+    if (base === "ar") return "ar";
+    if (base === "fr") return "fr";
+    if (base === "en") return "en";
+  }
+  return "en";
+}
+
 export function LocaleProvider({ children }: { children: React.ReactNode }) {
   const [locale, setLocale] = useState<Locale>("en");
   const [theme, setTheme] = useState<"light" | "dark">("light");
 
-  useEffect(() => {
-    const saved = window.localStorage.getItem("nexa-pay-locale");
-    if (saved === "en" || saved === "fr" || saved === "ar") {
-      setLocale(saved);
+  // SSR stays en/light; sync saved prefs or browser language / system theme before paint.
+  useLayoutEffect(() => {
+    const savedLoc = window.localStorage.getItem("nexa-pay-locale");
+    if (savedLoc === "en" || savedLoc === "fr" || savedLoc === "ar") {
+      setLocale(savedLoc);
+    } else {
+      setLocale(localeFromNavigatorLanguages());
     }
-  }, []);
 
-  useEffect(() => {
     const savedTheme = window.localStorage.getItem("nexa-pay-theme");
     if (savedTheme === "light" || savedTheme === "dark") {
       setTheme(savedTheme);
-      return;
-    }
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
       setTheme("dark");
     }
   }, []);

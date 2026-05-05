@@ -135,7 +135,7 @@ export const JoinForm = () => {
             {/* Status Message */}
             {submitStatus.type && (
               <div
-                className={`mb-6 mt-5 rounded-lg p-3 text-sm font-medium sm:text-base md:rounded-md md:p-4 ${
+                className={`mb-6 mt-5 rounded-lg p-3 text-start text-sm font-medium sm:text-base md:rounded-md md:p-4 ${
                   submitStatus.type === "success"
                     ? "bg-green-50 text-green-800 border border-green-200"
                     : "bg-red-50 text-red-800 border border-red-200"
@@ -147,7 +147,7 @@ export const JoinForm = () => {
 
             {/* Form */}
             <form
-              className="space-y-5 pt-5 text-left md:space-y-5 md:pt-8"
+              className="space-y-5 pt-5 text-start md:space-y-5 md:pt-8"
               dir={isRtl ? "rtl" : "ltr"}
               onSubmit={handleSubmit}
             >
@@ -165,7 +165,7 @@ export const JoinForm = () => {
                   placeholder={t.form.fullNamePlaceholder}
                   value={formData.full_name}
                   onChange={handleInputChange}
-                  className={`h-14 rounded-2xl border-[#1e293b] bg-[#07111f] text-white placeholder:text-[#94A3B8] focus-visible:border-[#3B82F6] focus-visible:ring-[3px] focus-visible:ring-[rgba(59,130,246,0.24)] ${isRtl ? "text-right placeholder:text-right" : ""}`}
+                  className="h-14 rounded-2xl border-[#1e293b] bg-[#07111f] text-start text-white placeholder:text-[#94A3B8] focus-visible:border-[#3B82F6] focus-visible:ring-[3px] focus-visible:ring-[rgba(59,130,246,0.24)]"
                   required
                 />
               </div>
@@ -185,7 +185,7 @@ export const JoinForm = () => {
                   placeholder={t.form.phonePlaceholder}
                   value={formData.phone_number}
                   onChange={handleInputChange}
-                  className={`h-14 rounded-2xl border-[#1e293b] bg-[#07111f] text-white placeholder:text-[#94A3B8] focus-visible:border-[#3B82F6] focus-visible:ring-[3px] focus-visible:ring-[rgba(59,130,246,0.24)] ${isRtl ? "text-right placeholder:text-right" : ""}`}
+                  className="h-14 rounded-2xl border-[#1e293b] bg-[#07111f] text-start text-white placeholder:text-[#94A3B8] focus-visible:border-[#3B82F6] focus-visible:ring-[3px] focus-visible:ring-[rgba(59,130,246,0.24)]"
                   required
                 />
               </div>
@@ -205,7 +205,7 @@ export const JoinForm = () => {
                   placeholder={t.form.emailPlaceholder}
                   value={formData.email}
                   onChange={handleInputChange}
-                  className={`h-14 rounded-2xl border-[#1e293b] bg-[#07111f] text-white placeholder:text-[#94A3B8] focus-visible:border-[#3B82F6] focus-visible:ring-[3px] focus-visible:ring-[rgba(59,130,246,0.24)] ${isRtl ? "text-right placeholder:text-right" : ""}`}
+                  className="h-14 rounded-2xl border-[#1e293b] bg-[#07111f] text-start text-white placeholder:text-[#94A3B8] focus-visible:border-[#3B82F6] focus-visible:ring-[3px] focus-visible:ring-[rgba(59,130,246,0.24)]"
                   required
                 />
               </div>
@@ -219,7 +219,7 @@ export const JoinForm = () => {
                   {t.form.city} <span className="text-red-500">*</span>
                 </Label>
                 <Select disabled defaultValue="Casablanca">
-                  <SelectTrigger className={`h-14 rounded-2xl border-[#1e293b] bg-[#07111f] font-semibold text-white focus:ring-[3px] focus:ring-[rgba(59,130,246,0.24)] ${isRtl ? "text-right" : ""}`}>
+                  <SelectTrigger className="h-14 rounded-2xl border-[#1e293b] bg-[#07111f] text-start font-semibold text-white focus:ring-[3px] focus:ring-[rgba(59,130,246,0.24)]">
                     <SelectValue className="text-white data-[placeholder]:text-[#94A3B8]" placeholder={t.form.cityValue} />
                   </SelectTrigger>
                   <SelectContent className="rounded-2xl border-[#1e293b] bg-[#0b1220] text-white">
@@ -249,7 +249,7 @@ export const JoinForm = () => {
                 >
                   <SelectTrigger
                     id="user_type"
-                    className={`h-14 rounded-2xl border-[#1e293b] bg-[#07111f] font-semibold text-white focus:ring-[3px] focus:ring-[rgba(59,130,246,0.24)] ${isRtl ? "text-right" : ""}`}
+                    className="h-14 rounded-2xl border-[#1e293b] bg-[#07111f] text-start font-semibold text-white focus:ring-[3px] focus:ring-[rgba(59,130,246,0.24)]"
                   >
                     <SelectValue className="text-white data-[placeholder]:text-[#94A3B8]" />
                   </SelectTrigger>
@@ -290,14 +290,14 @@ export const JoinForm = () => {
                   placeholder={t.form.usagePlaceholder}
                   value={formData.how_will_use_nexa}
                   onChange={handleInputChange}
-                  className={`min-h-[118px] rounded-2xl border-[#1e293b] bg-[#07111f] text-white placeholder:text-[#94A3B8] focus-visible:border-[#3B82F6] focus-visible:ring-[3px] focus-visible:ring-[rgba(59,130,246,0.24)] md:min-h-[120px] ${isRtl ? "text-right placeholder:text-right" : ""}`}
+                  className="min-h-[118px] rounded-2xl border-[#1e293b] bg-[#07111f] text-start text-white placeholder:text-[#94A3B8] focus-visible:border-[#3B82F6] focus-visible:ring-[3px] focus-visible:ring-[rgba(59,130,246,0.24)] md:min-h-[120px]"
                 />
               </div>
 
               {/* Submit */}
               <Button
                 type="submit"
-                className="h-[58px] w-full rounded-full bg-gradient-to-r from-[#2563EB] to-[#3B82F6] text-sm font-bold text-white shadow-[0_0_30px_rgba(59,130,246,0.45)] transition-all duration-200 hover:-translate-y-0.5 sm:text-base md:text-lg"
+                className="h-[58px] w-full rounded-full bg-gradient-to-r from-[#2563EB] to-[#3B82F6] text-center text-sm font-bold text-white shadow-[0_0_30px_rgba(59,130,246,0.45)] transition-all duration-200 hover:-translate-y-0.5 sm:text-base md:text-lg"
                 disabled={isLoading}
               >
                 {isLoading ? t.form.submitting : t.form.submit}
