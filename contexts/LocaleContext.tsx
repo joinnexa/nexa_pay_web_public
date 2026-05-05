@@ -245,6 +245,7 @@ const translations = {
       disclaimer:
         "Nexa Pay is in private beta. Features, availability, and fees may change. Nothing on this page is financial, legal, tax, or investment advice. Banking services, when offered, will be provided by licensed partners where required.",
       quickLinks: "Quick links",
+      aboutNexaPay: "What is Nexa Pay?",
       social: "Social",
       instagramJoin: "@joinnexa",
       instagramPay: "nexapay.ma",
@@ -473,6 +474,7 @@ const translations = {
       disclaimer:
         "Nexa Pay est en bêta privée. Fonctionnalités, disponibilité et frais peuvent évoluer. Rien sur cette page ne constitue un conseil financier, juridique, fiscal ou en investissement. Les services bancaires, le cas échéant, seront fournis par des partenaires agréés lorsque la réglementation l'exige.",
       quickLinks: "Liens rapides",
+      aboutNexaPay: "Qu’est-ce que Nexa Pay ?",
       social: "Réseaux sociaux",
       instagramJoin: "@joinnexa",
       instagramPay: "nexapay.ma",
@@ -691,6 +693,7 @@ const translations = {
       disclaimer:
         "Nexa Pay في مرحلة تجريبية خاصة. قد تتغير الميزات والتوفر والرسوم. لا يُعد أي محتوى على هذه الصفحة استشارة مالية أو قانونية أو ضريبية أو استثمارية. الخدمات المصرفية، عند توفرها، ستقدم عبر شركاء مرخصين عند الاقتضاء.",
       quickLinks: "روابط سريعة",
+      aboutNexaPay: "ما هو Nexa Pay؟",
       social: "وسائل التواصل",
       instagramJoin: "@joinnexa",
       instagramPay: "nexapay.ma",

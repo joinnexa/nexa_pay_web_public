@@ -71,6 +71,14 @@ export default function Footer() {
               {t.footer.quickLinks}
             </h3>
             <ul className={`mt-3 space-y-2 ${isRtl ? "text-right" : "text-left"}`}>
+              <li>
+                <Link
+                  href="/about/nexa-pay"
+                  className="text-sm text-white/70 transition hover:text-white"
+                >
+                  {t.footer.aboutNexaPay}
+                </Link>
+              </li>
               {QUICK_LINKS.map(({ navKey, target, offset }) => (
                 <li key={target}>
                   <button
