@@ -1,0 +1,606 @@
+[
+  {
+    "id": "TC001",
+    "title": "Submit the waitlist successfully",
+    "description": "A prospective lead can submit the join waitlist form and receive a visible success confirmation.",
+    "category": "Landing page browsing and section navigation",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the join waitlist form"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with a valid email address"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the optional message field with a short note"
+      },
+      {
+        "type": "action",
+        "description": "Submit the waitlist form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a success confirmation is visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC002",
+    "title": "Submit the waitlist successfully with complete details",
+    "description": "A prospective user can complete the waitlist form end-to-end and see a success confirmation after submitting valid contact details.",
+    "category": "Join waitlist submission",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the full name field with a valid name"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the phone number field with a valid phone number"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with a valid email address"
+      },
+      {
+        "type": "action",
+        "description": "Select a city"
+      },
+      {
+        "type": "action",
+        "description": "Select a user type"
+      },
+      {
+        "type": "action",
+        "description": "Optionally fill in the usage notes field with a brief description"
+      },
+      {
+        "type": "action",
+        "description": "Submit the form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a success confirmation is visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC003",
+    "title": "Browse the full landing page story",
+    "description": "A visitor can scan the landing page from the hero through the footer and see the complete marketing narrative end to end.",
+    "category": "Landing page browsing and section navigation",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll through the landing page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the hero, value proposition, services, pillars, roadmap, trust, and footer sections are visible during browsing"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC004",
+    "title": "Switch the site to Arabic with RTL layout",
+    "description": "A visitor can change the site language to Arabic and see the visible content update with a right-to-left layout.",
+    "category": "Language switching and locale persistence",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Open the language selector"
+      },
+      {
+        "type": "action",
+        "description": "Choose Arabic"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the visible page content is in Arabic"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a right-to-left layout is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC005",
+    "title": "Switch the landing page from English to French and Arabic",
+    "description": "A visitor can change locales on the landing page and see the visible content update accordingly, including Arabic right-to-left layout.",
+    "category": "Join waitlist submission",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Switch the page language to French"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the visible content updates to French"
+      },
+      {
+        "type": "action",
+        "description": "Switch the page language to Arabic"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the visible content updates to Arabic"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the layout is right-to-left"
+      },
+      {
+        "type": "action",
+        "description": "Switch the page language back to English"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the visible content returns to English"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC006",
+    "title": "Switch the site to French",
+    "description": "A visitor can change the site language to French and see the visible landing page content update accordingly.",
+    "category": "Language switching and locale persistence",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Open the language selector"
+      },
+      {
+        "type": "action",
+        "description": "Choose French"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the visible page content is in French"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the landing page sections remain present in the new locale"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC007",
+    "title": "Browse the landing page story from hero to footer",
+    "description": "A visitor can scan the landing page from the hero through key value sections and reach the footer quick links.",
+    "category": "Join waitlist submission",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll through the page content"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the hero content is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the key product sections are visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the footer quick links are visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC008",
+    "title": "Return the site to English after changing locale",
+    "description": "A visitor can switch back to English after viewing another locale and restore the English landing page content.",
+    "category": "Language switching and locale persistence",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Open the language selector"
+      },
+      {
+        "type": "action",
+        "description": "Choose French"
+      },
+      {
+        "type": "action",
+        "description": "Open the language selector"
+      },
+      {
+        "type": "action",
+        "description": "Choose English"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the visible page content is in English"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the landing page narrative is restored in English"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC009",
+    "title": "Read the English explainer and return to the home page",
+    "description": "A visitor can open the English explainer page, read the long-form content, and return to the main landing page through the home link.",
+    "category": "Nexa Pay explainer pages",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /about/nexa-pay"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the explainer content is visible"
+      },
+      {
+        "type": "action",
+        "description": "Click the home link"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the main landing page is visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC010",
+    "title": "Read the Arabic explainer with right-to-left layout and return home",
+    "description": "An Arabic-speaking visitor can open the localized explainer page, confirm the right-to-left layout, and return to the main landing page through the home link.",
+    "category": "Nexa Pay explainer pages",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /ar/about/nexa-pay"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the Arabic explainer content is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the layout is right-to-left"
+      },
+      {
+        "type": "action",
+        "description": "Click the home link"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the main landing page is visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC011",
+    "title": "Toggle the theme to dark mode",
+    "description": "A visitor can switch the public landing page from light mode to dark mode for comfortable browsing.",
+    "category": "Theme switching",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Toggle the theme setting"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the interface is displayed in dark mode"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC012",
+    "title": "Toggle between light and dark themes on the landing page",
+    "description": "A visitor can switch the public landing page theme and continue browsing with the selected appearance preserved on the page.",
+    "category": "Join waitlist submission",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Toggle the theme to dark mode"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the page is displayed in dark mode"
+      },
+      {
+        "type": "action",
+        "description": "Toggle the theme back to light mode"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the page is displayed in light mode"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC013",
+    "title": "Read the French explainer and return to the home page",
+    "description": "A French-speaking visitor can open the localized explainer page, read the content, and return to the main landing page through the home link.",
+    "category": "Nexa Pay explainer pages",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /fr/about/nexa-pay"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the French explainer content is visible"
+      },
+      {
+        "type": "action",
+        "description": "Click the home link"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the main landing page is visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC014",
+    "title": "Toggle the theme back to light mode",
+    "description": "A visitor can switch the public landing page back from dark mode to light mode.",
+    "category": "Theme switching",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Toggle the theme setting"
+      },
+      {
+        "type": "action",
+        "description": "Toggle the theme setting again"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the interface is displayed in light mode"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC015",
+    "title": "Open the explainer page from the footer",
+    "description": "A visitor can move from the landing page to the about article through the footer and reach the explanatory content page.",
+    "category": "Landing page browsing and section navigation",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the footer"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to view the About Nexa Pay page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the explainer page is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify long-form product explanation content is visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC016",
+    "title": "Read the English explainer page from home link",
+    "description": "A visitor can read the English about page and return to the landing page using the home link.",
+    "category": "Landing page browsing and section navigation",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /about/nexa-pay"
+      },
+      {
+        "type": "action",
+        "description": "Click the home link"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the landing page is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the hero section is visible"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC017",
+    "title": "Use the alternate home route to reach the landing experience",
+    "description": "A visitor can open the alternate home route and see the same landing experience as the main homepage.",
+    "category": "Join waitlist submission",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /home"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the landing page hero content is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the waitlist form is visible"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC018",
+    "title": "Show validation when a required field is missing",
+    "description": "A user leaving out a required waitlist field sees validation feedback and cannot submit incomplete details.",
+    "category": "Join waitlist submission",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the full name field with a valid name"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the phone number field with a valid phone number"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with a valid email address"
+      },
+      {
+        "type": "action",
+        "description": "Leave one required field empty"
+      },
+      {
+        "type": "action",
+        "description": "Select a user type if needed"
+      },
+      {
+        "type": "action",
+        "description": "Submit the form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a required field validation error is visible"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC019",
+    "title": "Jump to a landing page section from footer quick links",
+    "description": "A visitor can use footer quick links to jump to a referenced section and continue browsing from there.",
+    "category": "Landing page browsing and section navigation",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the footer"
+      },
+      {
+        "type": "action",
+        "description": "Click a footer quick link to a landing page section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the referenced section is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify browsing can continue from that section"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC020",
+    "title": "Show a validation error for an invalid email address",
+    "description": "A user entering an invalid email address sees a clear validation error and the form is not accepted.",
+    "category": "Join waitlist submission",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the full name field with a valid name"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the phone number field with a valid phone number"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with an invalid email address"
+      },
+      {
+        "type": "action",
+        "description": "Select a city"
+      },
+      {
+        "type": "action",
+        "description": "Select a user type"
+      },
+      {
+        "type": "action",
+        "description": "Submit the form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a validation error is visible"
+      }
+    ],
+    "priority": "Medium"
+  }
+]
